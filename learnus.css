@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-width: fit-content;
+}
+
+.box1 {
+    width: 1500px;
+}
+
+.head_up {
+    text-align: right;
+    background-color: #5E58D0;
+    padding: 5px 150px 5px 5px;
+}
+
+.head_up select {
+    background-color: black;
+    color: white;
+    padding: 2.5px;
+}
+
+.head_up button {
+    background-color: #6897F2;
+    color: white;
+    width: 70px;
+}
+
+.head_down {
+    background-color: #0E164D;
+    color: white;
+    padding: 20px 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.learnus {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.list {
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 50px;
+    margin: 30px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.box2 {
+    width: 1500px;
+    background-color: #CBCDD8;
+    display: flex;
+    flex-direction: row;
+}
+
+.box2_left {
+    margin-left: 200px;
+    margin-right: 20px;
+}
+
+.box2_right {
+    margin-right: 200px;
+    margin-right: 20px;
+}
+
+.content {
+    width: 550px;
+}
+
+.main-text {
+    padding: 3px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.event {
+    display: inline-flex;
+    padding-bottom: 10px;
+    color: white;
+}
+
+.event_left {
+    width: 50px;
+    font-size: 10px;
+    border: 1px solid grey;
+    text-align: center;
+    line-height: 3px;
+}
+
+.day {
+    color: blue;
+    font-size: 20px;
+}
+
+.event_right {
+    padding: 0px 20px;
+    color: black;
+    font-size: 20px;
+}
+
+.note {
+    padding-top: 10px;
+    border-top: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.note_left {
+    width: 350px;
+}
+
+.note_left ul {
+    font-size: 15px;
+    line-height: 24px;
+}
+
+.note-right {
+    width: 100px;
+}
+
+.note_right ul {
+    list-style: none;
+    padding-left: 0px;
+    font-size: 15px;
+    line-height: 24px;
+    text-align: right;
+    color: #7A7D90;
+}
+
+.box3 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    padding: 30px 50px;
+    background-color: #DACD4E;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.box3 input {
+    width: 600px;
+    height: 20px;
+    padding: 10px 0px;
+}
+
+.search_right button {
+    width: 100px;
+    padding: 10px 0px;
+}
+
+.search {
+    background-color: black;
+    color: white;
+}
+
+.box4 {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+    
+}
+
+.class_content {
+    width: 1100px;
+    margin: 50px 0px;
+}
+
+.class_sub-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.class_sec {
+    width: 250px;
+    height: 312px;
+    margin-right: 5px;
+    border: 2px solid #CBCDD8;
+}
+
+.class_up {
+    height: 90px;
+    padding-left: 20px;
+    border-top: 1px solid #CBCDD8;
+    font-size: 15px;
+}
+
+.class_down {
+    height: 50px;
+    padding-left: 20px;
+    background-color: #CBCDD8;
+    font-size: 15px;
+}
+
+.class_sch, .class_date {
+    color: #5C5C53;
+}
+
+.class_pro, .class_ing {
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px 200px;
+    background-color: black;
+    color: white;
+}
