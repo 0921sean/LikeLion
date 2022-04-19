@@ -1,0 +1,48 @@
+.box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.list {
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: black;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+img {
+    text-align: center;
+    box-shadow: 0px 5px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 30px;
+}
+
+li {
+    font-size: 20px;
+}
+
+li a {
+    font-size: 20px;
+    line-height: 50px;
+    color: #60D8FA;
+}
+
+button {
+    height: 25px;
+    width: auto;
+}
+
+.input-group {
+    margin: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.input-group button {
+    background-color: blue;
+    color: white;
+}
