@@ -29,4 +29,3 @@ print()
 a.clear()
 print(a)
 print(len(a))
-
