@@ -1,1 +1,0 @@
-print('hello 멋사 10기')
