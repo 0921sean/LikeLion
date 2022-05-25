@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="detail_box">
+    <div class="detail_box1">
+        <div class="detail_blog">
+            <p class="post_title">제목: {{ blog_detail.title }}</p>
+            <p class="post_writer">작성자: 익명</p>
+            <p class="post_date">작성일: {{ blog_detail.date }}</p>
+        </div>
+        <div>
+            <p>{{ blog_detail.body }}</p>
+        </div>
+        <div>
+            {% if blog_detail.photo %}
+            <img src="{{ blog_detail.photo.url }}" alt="no image" width="300">
+            {% endif %}
+        </div>
+        <div>
+            <a href="{% url 'home' %}" class="button" role="button" data-bs-toggle="button">홈으로</a>
+        </div>
+    </div>
+    <div>
+        <h3>댓글 작성</h3>
+        {% for comment in blog_detail.comment_set.all %}
+        <div class="comment">
+            <p class="comment_comment">{{ comment }}</p>
+            <p class="comment_writer">익명</p>
+            <p class="comment_date">{{ comment.date }}</p>
+        </div>
+        {% endfor %}
+    </div>
+    <form action="{% url 'new_comment' blog_detail.id %}" method="POST">
+        {% csrf_token %}
+        <div class="comment_submit">
+            {{ comment_form }}
+            <input type="submit" value="입력" class="button">
+        </div>
+    </form>
+</div>
+{% endblock %}

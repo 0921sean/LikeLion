@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800&display=swap');
+
+* {
+    font-family: 'Montserrat';
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    min-height: fit-content;
+}
+
+.header {
+    max-width: 100%;
+    background-color: green;
+    color: white;
+    padding: 0.5px 0px 0.5px 50px;
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: white;
+}
+
+.post_list {
+    width: 70%;
+    text-align: left;
+    margin: 10px auto;
+}
+
+.post, .comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0px 30px;
+}
+
+.post_title, .comment_comment {
+    width: 500px;
+}
+
+.post_writer, .comment_writer {
+    width: 10%;
+}
+
+.post_date, .comment_date {
+    width: 30%;
+}
+
+.button {
+    color: white;
+    background-color: yellowgreen;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    float: right;
+    overflow: hidden;
+}
+
+.new {
+    width: 30%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.new_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    margin: 10px auto;
+}
+
+.detail_box {
+    width: 70%;
+    margin: 20px auto;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 30px 70px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail_box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.detail_blog {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.comment_submit {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+}

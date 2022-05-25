@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="new">
+        <div class="new_content">
+            <label for="title">제목: </label><br/>
+            <input type="text" name="title" id="title">
+        </div>
+        <div class="new_content">
+            <label for="body">본문: </label><br/>
+            <textarea name="body" id="body" cols="30" rows="10"></textarea>
+        </div>
+        <div class="new_content">
+            <input type="file" name="upload" accept=".jpg">
+        </div>
+        <input type="submit" value="작성하기" class="button">
+        <a href="{% url 'home' %}" class="button" role="button" data-bs-toggle="button">홈으로</a>
+    </div>
+</form>
+{% endblock %}
