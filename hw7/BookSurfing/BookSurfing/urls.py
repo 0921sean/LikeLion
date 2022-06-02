@@ -14,10 +14,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from myapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from accounts import views as accounts_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,5 +30,16 @@ urlpatterns = [
     path('detail/<int:blog_id>', views.detail, name='detail'),
 
     path('new_comment/<int:blog_id>', views.new_comment, name='new_comment'),
+
+    path('login/', accounts_views.login, name='login'),
+    path('logout/', accounts_views.logout, name='logout'),
+
+    path('accounts/', include('accounts.urls')),
+
+    path('delete/<int:blog_id>', views.delete, name='delete'),
+    path('detail/<int:blog_id>/edit', views.edit, name='edit'),
+    path('delete_comment/<int:blog_id>', views.delete_comment, name='delete_comment')
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'myapp.views.page_not_found'

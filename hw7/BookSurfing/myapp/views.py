@@ -3,7 +3,6 @@ from django.utils import timezone
 from .models import Blog, Comment
 from .forms import CommentForm
 
-
 # Create your views here.
 def home(request):
     posts = Blog.objects.filter().order_by('-date')
@@ -19,6 +18,7 @@ def create(request):
         post.body = request.POST['body']
         post.photo = request.FILES['upload']
         post.date = timezone.now()
+        post.author = request.user
         post.save()
     return redirect('home')
 
@@ -31,6 +31,33 @@ def new_comment(request, blog_id):
     filled_form = CommentForm(request.POST)
     if filled_form.is_valid():
         finished_form = filled_form.save(commit=False)
+        finished_form.author = request.user
         finished_form.post = get_object_or_404(Blog, pk=blog_id)
         finished_form.save()
+    return redirect('detail', blog_id)
+
+def page_not_found(request, exception):
+    return render(request, '404.html')
+
+def delete(request, blog_id):
+    delete_post = get_object_or_404(Blog, pk=blog_id)
+    delete_post.delete()
+    return redirect('home')
+
+def edit(request, blog_id):
+    post = Blog.objects.get(id=blog_id)
+    if request.method == "POST":
+        post.title = request.POST['title']
+        post.body = request.POST['body']
+        post.photo = request.FILES['upload']
+        post.date = timezone.now()
+        post.author = request.user
+        post.save()
+        return redirect('detail'+str(post.pk))
+    else:
+        return render(request, 'form_edit.html', {'post':post})
+
+def delete_comment(request, blog_id):
+    delete_post = get_object_or_404(Comment, pk=blog_id)
+    delete_post.delete()
     return redirect('detail', blog_id)

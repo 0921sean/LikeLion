@@ -11,7 +11,18 @@
 </head>
 <body>
     <header class="header">
-        <h1>Book Surfing</h1>
+        <div class="header_left">
+            <h1>Book Surfing</h1>
+        </div>
+        <div class="header_right">
+            {% if user.is_authenticated %}
+            <h1>안녕하세요, {{ user.username }}님</h1>
+            <a href="{% url 'logout' %}"><h1>Logout</h1></a>
+            {% else %}
+            <a href="{% url 'signup' %}"><h1>Signup</h1></a>
+            <a href="{% url 'login' %}"><h1>Login</h1></a>
+            {% endif %}
+        </div>
     </header>
     {% block content %}
 
