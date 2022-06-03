@@ -35,7 +35,7 @@
             <p class="comment_writer">{{ comment.author }}</p>
             <p class="comment_date">{{ comment.date }}</p>
             {% if user.username == comment.author.username %}
-            <a href="{% url 'delete_comment' blog_detail.id %}">삭제하기</a>
+            <a href="{% url 'delete_comment' comment.id %}">삭제하기</a>
             {% endif %}
         </div>
         {% endfor %}

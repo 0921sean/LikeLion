@@ -40,12 +40,12 @@ def page_not_found(request, exception):
     return render(request, '404.html')
 
 def delete(request, blog_id):
-    delete_post = get_object_or_404(Blog, pk=blog_id)
+    delete_post = Blog.objects.get(id=blog_id)
     delete_post.delete()
     return redirect('home')
 
 def edit(request, blog_id):
-    post = Blog.objects.get(id=blog_id)
+    post = get_object_or_404(Blog, pk=blog_id)
     if request.method == "POST":
         post.title = request.POST['title']
         post.body = request.POST['body']
@@ -53,11 +53,12 @@ def edit(request, blog_id):
         post.date = timezone.now()
         post.author = request.user
         post.save()
-        return redirect('detail'+str(post.pk))
+        return redirect('detail', blog_id)
     else:
         return render(request, 'form_edit.html', {'post':post})
 
-def delete_comment(request, blog_id):
-    delete_post = get_object_or_404(Comment, pk=blog_id)
-    delete_post.delete()
+def delete_comment(request, comment_id):
+    delete_comment = Comment.objects.get(id=comment_id)
+    blog_id = delete_comment.post.id
+    delete_comment.delete()
     return redirect('detail', blog_id)

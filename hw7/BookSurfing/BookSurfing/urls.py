@@ -27,18 +27,18 @@ urlpatterns = [
     path('new/', views.new, name='new'),
     path('create/', views.create, name='create'),
 
-    path('detail/<int:blog_id>', views.detail, name='detail'),
+    path('detail/<int:blog_id>/', views.detail, name='detail'),
 
-    path('new_comment/<int:blog_id>', views.new_comment, name='new_comment'),
+    path('new_comment/<int:blog_id>/', views.new_comment, name='new_comment'),
 
     path('login/', accounts_views.login, name='login'),
     path('logout/', accounts_views.logout, name='logout'),
 
     path('accounts/', include('accounts.urls')),
 
-    path('delete/<int:blog_id>', views.delete, name='delete'),
-    path('detail/<int:blog_id>/edit', views.edit, name='edit'),
-    path('delete_comment/<int:blog_id>', views.delete_comment, name='delete_comment')
+    path('delete/<int:blog_id>/', views.delete, name='delete'),
+    path('edit/<str:blog_id>/', views.edit, name='edit'),
+    path('delete_comment/<str:comment_id>/', views.delete_comment, name='delete_comment')
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
