@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>이름: <input type="text" name="name" id="name"></p>
+    <p>소개: <input type="text" name="body" id="body"></p>
+    <p>인원수: <input type="number" name="number"></p>
+    <button type="submit">수정하기</button>
+</form>
+{% endblock %}

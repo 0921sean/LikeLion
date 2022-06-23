@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <p>이름: {{ club_detail.name }}</p>
+    <p>소개: {{ club_detail.body }}</p>
+    <p>인원수: {{ club_detail.number }}</p>
+</div>
+<div>
+    <a href="{% url 'home' %}">홈으로</a>
+    <a href="{% url 'edit' club_detail.id %}">수정</a>
+    <a href="{% url 'delete' club_detail.id %}">삭제</a>
+</div>
+<div>
+    <form action="{% url 'new_comment' club_detail.id %}" method="POST">
+        {% csrf_token %}
+        <p>댓글: <input type="text" name="comment" id="comment"></p>
+        <button type="submit">입력하기</button>
+    </form>
+</div>
+<div>
+    {% for comment in comments %}
+    <p>{{ comment }}</p>
+    <p>{{ comment.date }}</p>
+    {% endfor %}
+</div>
+{% endblock %}

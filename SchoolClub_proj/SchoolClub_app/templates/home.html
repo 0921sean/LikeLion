@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="{% url 'new' %}">
+    <button>새 글</button>
+</a>
+{% for club in clubs %}
+<div>
+    <a href="{% url 'detail' club.id %}"><p>이름: {{ club.name }}</p></a>
+    <p>소개: {{ club.body }}</p>
+    <p>인원수: {{ club.number }}</p>
+</div>
+{% endfor %}
+{% endblock %}
